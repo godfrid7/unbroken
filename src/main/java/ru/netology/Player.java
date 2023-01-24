@@ -5,24 +5,30 @@ import java.util.Map;
 
 public class Player {
     private String name;
+    private int hours;
 
     /** информация о том, в какую игру сколько часов было сыграно
      ключ - игра
      значение - суммарное количество часов игры в эту игру */
     private Map<Game, Integer> playedTime = new HashMap<>();
 
-    public Player(String name) {
+    public Player(String name, int hours) {
         this.name = name;
+        this.hours = hours;
+
     }
 
     public String getName() {
         return name;
     }
+    public int getHours() {
+        return hours;
+    }
 
     /** добавление игры игроку
      если игра уже была, никаких изменений происходить не должно */
     public void installGame(Game game) {
-        playedTime.put(game, 0);
+        playedTime.put(game,3);
     }
 
     /** игрок играет в игру game на протяжении hours часов
@@ -59,4 +65,3 @@ public class Player {
     public Game mostPlayerByGenre(String genre) {
         return null;
     }
-}
